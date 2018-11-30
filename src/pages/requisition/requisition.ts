@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 
+/**
+ * Generated class for the RequisitionPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-requisition',
+  templateUrl: 'requisition.html',
 })
-export class HomePage {
+export class RequisitionPage {
   items;
   toggled: boolean;
-  
   private isOn: boolean = false;
   public isSearchbarOpend = false;
 

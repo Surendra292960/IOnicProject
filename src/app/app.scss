@@ -1,16 +1,63 @@
-// http://ionicframework.com/docs/theming/
+.background{
+    background: black;
+}
 
+.custom-avatar {
+    height: 20vw;
+    width: 20vw;
+    border: 10px solid #fff;
+    border-radius: 100%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+  .super-avatar {
+    height: 20vw;
+    width: 20vw;
+    color: #fff;
+    background: #fff;
+    //border: 10px solid #fff;
+   // border-radius: 0%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 50px; right: 50px;
+  }
+
+  .scroll-content {
+    left: 5px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    background: rgb(77, 74, 74);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    contain: size style layout;
+}
+
+// .style-button{
+//     background: rgb(77, 74, 74);
+//     border-bottom: none;
+//     left:5px;
+//     right:0px;
+//     position:relative;
+// }
+ 
+.de11{
+   color: #fff;
+   font-weight: 100;
+   background: rgb(77, 74, 74);
+   border-bottom: none;
+   position: relative;
+   //padding-right: 150px;
+    //vertical-align: middle;
+    //text-align: center;
+
+}
+

@@ -1,10 +1,19 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+// import { ListPage } from '../pages/list/list';
+// import { SearchPage } from '../pages/search/search';
+import { MapPage } from '../pages/map/map';
+import { RequisitionPage } from '../pages/requisition/requisition';
+import { TicketsPage } from '../pages/tickets/tickets';
+import { SignOutPage } from '../pages/sign-out/sign-out';
+import { SettingPage } from '../pages/setting/setting';
+import { ManualPage } from '../pages/manual/manual';
+import { CollaborationPage } from '../pages/collaboration/collaboration';
+import { ELogPage } from '../pages/e-log/e-log';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,15 +23,27 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, icon:string, component: any}>;
+  pages1: Array<{title: string, icon:string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public menu:MenuController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Requisition', icon:'document', component: RequisitionPage },
+      { title: 'Home', icon:'home', component: HomePage },
+      { title: 'Tickets', icon:'md-copy', component: TicketsPage }, 
+      { title: 'Map', icon:'md-locate', component: MapPage }, 
+      { title: 'Collaboration', icon:'md-chatbubbles', component: CollaborationPage },     
+      { title: 'E-Log', icon:'md-clipboard', component: ELogPage }     
+
+    ];
+
+    this.pages1 = [
+      { title: 'Setting', icon:'settings', component: SettingPage },
+      { title: 'Manual', icon:'ios-help-circle-outline', component: ManualPage },
+      { title: 'SignOut', icon:'md-create', component: SignOutPage }
     ];
 
   }
@@ -39,6 +60,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
+    this.menu.close();
     this.nav.setRoot(page.component);
   }
 }
