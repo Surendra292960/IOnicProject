@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { IonicApp, IonicErrorHandler, IonicModule, DateTime } from 'ionic-angular';
+import { DatePicker } from '@ionic-native/date-picker';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SearchPage } from '../pages/search/search';
@@ -17,6 +16,7 @@ import { SettingPage } from '../pages/setting/setting';
 import { ManualPage } from '../pages/manual/manual';
 import { CollaborationPage } from '../pages/collaboration/collaboration';
 import { ELogPage } from '../pages/e-log/e-log';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { ELogPage } from '../pages/e-log/e-log';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -46,6 +47,7 @@ import { ELogPage } from '../pages/e-log/e-log';
   providers: [
     StatusBar,
     SplashScreen,
+    DatePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

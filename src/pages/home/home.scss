@@ -1,11 +1,16 @@
 page-home {
+    
+    .content-md{
+        background-color: rgb(80, 78, 78) !important;
+    }
+
     #search {
         //background: #5c5f5f;
         
     }
 
     .searchbar-md .searchbar-input {
-        background: linear-gradient(to bottom right, #5c5f5f, #5c5f5f);
+        background: linear-gradient(to bottom right, rgb(80, 78, 78), rgb(80, 78, 78));
         //background-color: #009196;
         padding-left: 9px !important;
         color: rgb(245, 240, 240);

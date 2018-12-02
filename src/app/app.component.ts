@@ -25,9 +25,11 @@ export class MyApp {
 
   pages: Array<{title: string, icon:string, component: any}>;
   pages1: Array<{title: string, icon:string, component: any}>;
+  pages2: Array<{title: string, icon:string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public menu:MenuController) {
     this.initializeApp();
+    menu.enable(false,"menu3");
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -46,6 +48,22 @@ export class MyApp {
       { title: 'SignOut', icon:'md-create', component: SignOutPage }
     ];
 
+    this.pages2 = [
+      { title: 'Signed in as', icon:'settings'},
+      { title: 'Language', icon:'ios-help-circle-outline' },
+      { title: 'Auto Sync', icon:'md-create' },
+      { title: 'GPS', icon:'settings'},
+      { title: 'Notifications', icon:'ios-help-circle-outline' },
+      { title: 'Show Hints', icon:'md-create' },
+      { title: 'Allow Rotation', icon:'settings'},
+      { title: 'App Sounds', icon:'ios-help-circle-outline' },
+      { title: '24 Hour clock', icon:'md-create' },
+      { title: 'Show Distance in Km', icon:'settings'},
+      { title: 'Fingeprint Authorization', icon:'ios-help-circle-outline' },
+
+    ];
+
+
   }
 
   initializeApp() {
@@ -60,7 +78,19 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
+    if(page.title==="Setting")
+    {
+      this.menu.enable(true,"menu3");
+      this.menu.open("menu3");
+      console.log("menu3");
+    }
+    else
+    {
+
     this.menu.close();
     this.nav.setRoot(page.component);
+    this.menu.enable(false,"menu3");  
+    this.menu.open("menu3");
+  }
   }
 }
