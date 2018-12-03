@@ -1,5 +1,10 @@
 page-requisition {
 
+    .content-md{
+        background-color: rgb(80, 78, 78) !important;
+    }
+    
+
 .inputWithIcon input{
     border-color:dodgerBlue;
     box-shadow:0 0 8px dodgerBlue;
@@ -156,4 +161,7 @@ ion-textarea {
          text-transform: none;
          color: #ffff;
      }
+     .item-radio-checked.item ion-label {
+        color: blue !important; //your color here for selected option
+    }
 }

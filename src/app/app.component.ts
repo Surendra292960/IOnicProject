@@ -14,6 +14,7 @@ import { SettingPage } from '../pages/setting/setting';
 import { ManualPage } from '../pages/manual/manual';
 import { CollaborationPage } from '../pages/collaboration/collaboration';
 import { ELogPage } from '../pages/e-log/e-log';
+import { SearchPage } from '../pages/search/search';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +26,7 @@ export class MyApp {
 
   pages: Array<{title: string, icon:string, component: any}>;
   pages1: Array<{title: string, icon:string, component: any}>;
-  pages2: Array<{title: string, icon:string}>;
+  pages2: Array<{title: string, icon:string,component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public menu:MenuController) {
     this.initializeApp();
@@ -38,7 +39,8 @@ export class MyApp {
       { title: 'Tickets', icon:'md-copy', component: TicketsPage }, 
       { title: 'Map', icon:'md-locate', component: MapPage }, 
       { title: 'Collaboration', icon:'md-chatbubbles', component: CollaborationPage },     
-      { title: 'E-Log', icon:'md-clipboard', component: ELogPage }     
+      { title: 'E-Log', icon:'md-clipboard', component: ELogPage },
+      { title: 'Search', icon:'md-clipboard', component: SearchPage }      
 
     ];
 
@@ -49,18 +51,7 @@ export class MyApp {
     ];
 
     this.pages2 = [
-      { title: 'Signed in as', icon:'settings'},
-      { title: 'Language', icon:'ios-help-circle-outline' },
-      { title: 'Auto Sync', icon:'md-create' },
-      { title: 'GPS', icon:'settings'},
-      { title: 'Notifications', icon:'ios-help-circle-outline' },
-      { title: 'Show Hints', icon:'md-create' },
-      { title: 'Allow Rotation', icon:'settings'},
-      { title: 'App Sounds', icon:'ios-help-circle-outline' },
-      { title: '24 Hour clock', icon:'md-create' },
-      { title: 'Show Distance in Km', icon:'settings'},
-      { title: 'Fingeprint Authorization', icon:'ios-help-circle-outline' },
-
+      { title: 'Notifications', icon:'settings', component: SignOutPage},
     ];
 
 
@@ -84,13 +75,35 @@ export class MyApp {
       this.menu.open("menu3");
       console.log("menu3");
     }
-    else
+   else
     {
-
     this.menu.close();
     this.nav.setRoot(page.component);
     this.menu.enable(false,"menu3");  
     this.menu.open("menu3");
+    }
+
+     if( page.title=="Notifications")
+     {
+       this.menu.enable(true,"menu4");
+       this.menu.open("menu4");
+     }
   }
+
+  menu_close(page)
+  {
+    this.menu.enable(true,"menu2");
+    this.menu.open("menu2");
+    this.nav.popToRoot();
+    
   }
+
+  menu_close2(page)
+  {
+    this.menu.enable(true,"menu3");
+    this.menu.open("menu3");
+    this.nav.popToRoot();
+    
+  }
+
 }

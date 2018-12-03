@@ -30,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     SignOutPage,
     SettingPage,
     ManualPage,
-    CollaborationPage,ELogPage
+    CollaborationPage,ELogPage,SearchPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,7 @@ import { FormsModule } from '@angular/forms';
     MyApp,
     HomePage,
     ListPage,SearchPage,MapPage,RequisitionPage,TicketsPage,SignOutPage,SettingPage,
-    ManualPage,CollaborationPage,ELogPage
+    ManualPage,CollaborationPage,ELogPage,SearchPage
   ],
   providers: [
     StatusBar,

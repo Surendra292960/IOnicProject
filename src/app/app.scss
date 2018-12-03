@@ -68,3 +68,32 @@ ion-menu{
     }
    }
 
+   .col{
+       padding:10px;
+       color:white;
+   }
+
+   .chkbox {
+    padding-left: 70px;
+  //  font-weight: 1px;
+    color: white;
+  }
+
+  .chkbox1{
+    padding-left: 135px;
+     font-weight: 1px;
+      color: white;
+  }
+
+  .text{
+    padding-left: 100px; 
+  }
+
+
+//   ion-menu {
+//     max-width: 20px!important;
+// }
+
+.split-pane-visible > ion-menu {
+    max-width: 304px!important;
+  }

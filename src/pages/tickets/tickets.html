@@ -11,7 +11,7 @@
   <ion-navbar color="dark">
       <ion-title *ngIf="!isOn">    
           <button ion-button menuToggle="left" start>
-          <ion-icon name="menu"></ion-icon>Tickets 
+          <ion-icon name="menu"></ion-icon><ion-icon name="ios-arrow-back"></ion-icon>Tickets 
         </button></ion-title>
         <div id="search" class="search-button-star">
       <ion-searchbar *ngIf="isOn"  (ionCancel)="onCancel($event)" animated="true"></ion-searchbar>
@@ -25,13 +25,18 @@
     <button ion-button menuToggle="right" end>
         <ion-icon name="menu"></ion-icon> 
      </button>
-     
   </ion-navbar>
-
+  <ion-toolbar color="dark2">
+        <ion-buttons left>
+          <button ion-button icon-only>
+            <ion-icon name="ios-arrow-down"></ion-icon>Ticket #F7154310
+          </button>
+        </ion-buttons>    
+      </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding-vertical>
     <ion-grid class="secondry-content">
         <ion-row>
     
@@ -86,7 +91,7 @@
         <ion-row>
             <ion-col>            
                 <ion-item class="secondry-content">
-                    <ion-label>Ticket Type</ion-label>
+                    <ion-label>TicketTy.</ion-label>
                     <ion-select interface="popover">
                         <ion-option value="10">10</ion-option>
                         <ion-option value="20">20</ion-option>
@@ -95,7 +100,7 @@
             </ion-col>
             <ion-col>            
                 <ion-item class="secondry-content">
-                    <ion-label>Product Type</ion-label>
+                    <ion-label>ProductTy.</ion-label>
                     <ion-select interface="popover">
                         <ion-option value="10">10</ion-option>
                         <ion-option value="20">20</ion-option>
@@ -120,7 +125,7 @@
             <ion-row>
                 <ion-col>            
                     <ion-item class="secondry-content">
-                        <ion-label>StartGuage</ion-label>
+                        <ion-label>StartGua</ion-label>
                         <ion-select>
                             <ion-option value="10">10</ion-option>
                             <ion-option value="20">20</ion-option>
@@ -129,7 +134,7 @@
                 </ion-col>
                 <ion-col>            
                     <ion-item class="secondry-content">
-                        <ion-label>FinishGuage</ion-label>
+                        <ion-label>FinishGua</ion-label>
                         <ion-select>
                             <ion-option value="10">10</ion-option>
                             <ion-option value="20">20</ion-option>
